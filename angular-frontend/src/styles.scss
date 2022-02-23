@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+:root {
+  --main-blue: #009ce0;
+  --gradient-blue: #1fc8db;
+  --gradient-gray: #9fb8ad;
+  --selected-blue: skyblue;
+  --hover-gray: #f1f1f1; // main screen background
+  --disabled-gray: #e1e3e6;
+  --dark-gray: grey;
+  --border-gray: #ced4da;
+  --border-dark-gray: #ced4da61;
+  --red: #d91147;
+  --validation-dark-red: rgba(217, 17, 71, 0.53);
+  --orange: #fc9c35;
+  --post-green: #48cc90;
+  --patch-green: #50e3c1;
+  --put-orange: #ff9d00;
+  --get-blue: #61affe;
+  --options-blue: #005aad;
+  --head-purple: #9027fa;
+  --connect-yellow: #fff500;
+  --delete-red: #f93e3e;
+  --white: white;
+  --black: black;
+  --input-green: #2ad4cb;
+  --input-blue: rgba(81, 203, 238, 1);
+  --title-gray: #565353;
+  --white-button-hover:#1fc8db1c;
+  --input-bluee: rgb(103, 58, 126);
+}
