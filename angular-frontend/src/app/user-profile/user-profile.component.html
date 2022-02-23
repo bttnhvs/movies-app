@@ -1,0 +1,25 @@
+<div class="container-fluid" style="overflow: hidden; background: white;">
+  <div class="row" style="margin-top:100px;">
+    <div class="col-3">
+      <div class="image-box">
+        <img class="img-fluid" id="person-img" src="../../assets/{{user?.userImg}}"/>
+        <div class="overlay"></div>
+        <div class="person-main-title">User Info</div>
+        <div class="person-title">Name</div>
+        <div>{{user?.name}}</div>
+        <div class="person-title">Username</div>
+        <div>{{user?.username}}</div>
+        <div class="person-title">Email</div>
+        <div>{{user?.email}}</div>
+        <button class="base-button">Edit User</button>
+      </div>
+    </div>
+    <div class="col-9">
+      <h2>{{user?.name}}</h2>
+      <div class="person-main-title">Favourite Movies</div>
+      <div class="person-title">{{user?.favouriteMovies}}</div>
+      <div class="person-main-title">Watch List</div>
+      <div class="person-title">{{user?.watchList}}</div>
+    </div>
+  </div>
+</div>

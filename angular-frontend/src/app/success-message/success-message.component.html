@@ -1,0 +1,35 @@
+<div class="success-box">
+  <div>
+    <mat-icon class="success-icon">
+      check_circle
+    </mat-icon>
+    <span class="success-title">Success Message</span>
+  </div>
+
+  <mat-icon (click)="closeSnackBar()" class="close-success-icon">clear</mat-icon>
+
+  <div *ngIf="data.editedMovie" class="success-message">
+    {{data.editedMovie}} was successfully edited.
+  </div>
+
+  <div *ngIf="data.editedPerson" class="success-message">
+    {{data.editedPerson}} was successfully edited.
+  </div>
+
+  <div *ngIf="data.deletedPerson" class="success-message">
+    {{data.deletedPerson}} was successfully deleted.
+  </div>
+
+  <div *ngIf="data.deletedMovie" class="success-message">
+    {{data.deletedMovie}} was successfully deleted.
+  </div>
+
+  <div *ngIf="data.newMovie" class="success-message">
+    {{data.newMovie}} was successfully created.
+  </div>
+
+  <div *ngIf="data.newPerson" class="success-message">
+    {{data.newPerson}} was successfully created.
+  </div>
+
+</div>

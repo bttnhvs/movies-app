@@ -1,0 +1,70 @@
+<div
+  style="height: 100%;margin: 0;min-height: 100%;min-width: 100%;width: 100%;flex-direction: row;box-sizing: border-box;display: flex;max-height: 100%;place-content: center;align-items: center;">
+  <div class="login-container">
+    <div class="login-header">
+      <span class="login-title">Solent Movies</span>
+    </div>
+    <form (ngSubmit)="signup()" [formGroup]="signupForm">
+      <div class="form-group">
+        <div
+          style="place-content: center;align-items: center;flex-direction: row;box-sizing: border-box;display: flex;">
+          <mat-icon class="login-icons">person</mat-icon>
+          <label>Name</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="usernameFormControl"
+            id="username"
+            minlength="4"
+            name="username"
+            placeholder="User name"
+            type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <div
+          style="place-content: center;align-items: center;flex-direction: row;box-sizing: border-box;display: flex;">
+          <mat-icon class="login-icons">person</mat-icon>
+          <label>Username</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="usernameFormControl"
+            id="username"
+            minlength="4"
+            name="username"
+            placeholder="User name"
+            type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <div
+          style="place-content: center;align-items: center;flex-direction: row;box-sizing: border-box;display: flex;">
+          <mat-icon class="login-icons" id="lock-icon">lock</mat-icon>
+          <label>Password</label>
+          <input
+            [type]="hidePassword ? 'password' : 'text'"
+            autocomplete="off"
+            class="form-control"
+            formControlName="passwordFormControl"
+            id="password"
+            name="password"
+            placeholder="Password"
+            type="password">
+          <!--          <mat-icon class="visibility-icon"-->
+          <!--                    (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+        </div>
+      </div>
+      <div>
+        <button
+          class="base-button"
+          id="login-button"
+          type="submit">
+          <span>Sign up</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
