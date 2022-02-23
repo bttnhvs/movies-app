@@ -1,0 +1,42 @@
+<div class="container-fluid" style="overflow: hidden;">
+  <div class="row" style="margin:80px 0 20px 0">
+    <div class="col-12">
+      <h3 class="page-title">Genres</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3" style="margin-top: 0px;">
+      <table class="table">
+        <thead>
+        <tr>
+          <th (click)="selectGenre('allGenres')" [class.selected]="'allGenres' === selectedGenre"
+              scope="col">
+            All Genres
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr (click)="selectGenre(genre.name)"
+            *ngFor="let genre of genres; let i = index">
+          <th [class.selected]="genre.name === selectedGenre" class="genre-name" scope="row">{{genre.name}}</th>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-9" style="margin-top: -20px;">
+      <div class="row">
+        <div *ngFor="let movie of filteredMovies; let i = index" class="col-3" style="position:unset !important; margin-bottom: 50px;">
+          <div (click)="openSelectedMovie(movie.id)" class="image-box">
+            <img class="img-fluid" id="person-img" src="../../assets/{{movie.albumImg}}"/>
+            <div class="person-pane">
+              <span class="person-name">{{movie.name}}</span>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="noMovieMessage" class="no-movie-message">
+          {{noMovieMessage}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

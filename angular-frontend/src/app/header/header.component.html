@@ -1,0 +1,73 @@
+<div style="height: 50px; background: #23282d;; width: 100%; position: absolute"></div>
+<header class="topnav">
+  <div class="title">
+    <div class="header-logo"></div>
+    <h1>SOLENT MOVIES</h1>
+    <div class="vertical-line" style="height: 45px;"></div>
+    <div *ngIf="isLoggedIn" class="header-items">
+      <h2 [ngClass]="{ 'active-menu-item': activeMenuItem ==='/home'}"
+          class="header-item"
+          routerLink="/home"
+          routerLinkActive="active">
+        Home</h2>
+      <h2 [ngClass]="{ 'active-menu-item': activeMenuItem ==='/movies'}"
+          class="header-item"
+          routerLink="/movies"
+          routerLinkActive="active">Movies</h2>
+      <h2 [ngClass]="{ 'active-menu-item': activeMenuItem ==='/genres'}"
+          class="header-item"
+          routerLink="/genres"
+          routerLinkActive="active">Genres</h2>
+      <h2 [ngClass]="{ 'active-menu-item': activeMenuItem ==='/persons'}"
+          class="header-item"
+          routerLink="/persons"
+          routerLinkActive="active">Stars</h2>
+    </div>
+  </div>
+  <div class="topnav-links">
+    <span *ngIf="isLoggedIn" class="content" role="main"
+          style="display:inline; float: left;   z-index: 1; margin-top:5px;">
+      <span class="card">
+        <span class="form-group" style="margin-bottom: 0;">
+<!--              <mat-icon id="search-icon">search</mat-icon>-->
+          <input [(ngModel)]="searchText" aria-describedby="search-text" autofocus class="form-control"
+                 id="search-text" placeholder="Search"
+                 type="email">
+        </span>
+        <ul #menuDropdown class="list-group list-group-flush" id="menuDropdown" style=" z-index: 1;">
+          <li (click)="openMovie(movie)" *ngFor="let movie of movieNames  | appFilter: searchText" [classToApply]="'font-weight-bold'"
+              [content]="movie" [searchedWord]="searchText"
+              [setTitle]="true" appHighlight class="list-group-item">
+            {{movie}}
+          </li>
+        </ul>
+      </span>
+    </span>
+    <span *ngIf="!isLoggedIn">
+       <div class="header-link" routerLink="/login">Login</div>
+<!--       <div class="header-link" routerLink="/signup">Sign up</div>-->
+    </span>
+    <span *ngIf="isLoggedIn">
+    <mat-icon [matMenuTriggerFor]="profileMenu"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              id="settings-icon"
+              matTooltip="Profile"
+              matTooltipClass="tooltip-settings"
+              matTooltipPosition="below">account_circle
+    </mat-icon>
+  </span>
+  </div>
+  <mat-menu #profileMenu="matMenu">
+      <span mat-menu-item
+            routerLink="/user-profile/"
+            routerLinkActive="active">
+        <!--[ngStyle]="{'background-color' : activeMenuItem ==='/user-profile' ? 'skyblue' : 'white'}"-->
+        User Profile</span>
+    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
+    <span (click)="logout()"
+          mat-menu-item>
+        Log Out</span>
+  </mat-menu>
+</header>

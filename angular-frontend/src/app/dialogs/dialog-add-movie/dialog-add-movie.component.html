@@ -1,0 +1,99 @@
+<div class="dialog-header">
+  <h2 class="dialog-title">Add Movie</h2>
+  <mat-icon (click)="closeDialog()" class="close-dialog-icon">clear</mat-icon>
+</div>
+
+<div class="container-fluid" style="overflow: hidden;">
+  <form (ngSubmit)="addMovie()" [formGroup]="addMovieForm">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label class="field-label" for="nameFC" id="nameFC" required>Movie title</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="nameFC"
+            name="nameFC"
+            required
+            type="text"/>
+        </div>
+        <div class="form-group">
+          <label class="field-label" for="runtimeFC" id="runtimeFC" required>Run time</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="runtimeFC"
+            name="runtimeFC"
+            required
+            type="text"/>
+        </div>
+        <div class="form-group">
+          <label class="field-label" for="releaseDateFC" id="releaseDateFC" required>Release date</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="releaseDateFC"
+            name="releaseDateFC"
+            required
+            type="text"/>
+        </div>
+        <div class="form-group">
+          <label class="field-label" for="directorFC" id="directorFC" required>Director</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="directorFC"
+            name="directorFC"
+            required
+            type="text"/>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label class="field-label" for="writerFC" id="writerFC" required>Writer</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="writerFC"
+            name="writerFC"
+            required
+            type="text"/>
+        </div>
+        <div class="input-group" style="display: block">
+          <div>
+            <label class="field-label" for="other-details-client-edit">Story</label>
+          </div>
+          <div>
+           <textarea class="form-control"
+                     formControlName="storyFC"
+                     id="other-details-client-edit">
+           </textarea>
+          </div>
+        </div>
+        <div>
+          <mat-form-field appearance="fill" class="newevent__container">
+            <mat-label>Scope</mat-label>
+            <mat-select multiple name="genres">
+              <mat-option *ngFor="let genre of genres" [value]="genre">
+                {{genre.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-dialog-actions class="cancel-save-buttons">
+          <button (click)="closeDialog()"
+                  class="base-button"
+                  id="cancel-button"
+                  mat-stroked-button>
+            Cancel
+          </button>
+          <button class="base-button"
+                  id="save-button"
+                  type="submit">
+            Save
+          </button>
+        </mat-dialog-actions>
+      </div>
+    </div>
+  </form>
+</div>

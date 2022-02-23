@@ -1,0 +1,17 @@
+<div class="dialog-header">
+  <h2 class="dialog-title">Delete Movie</h2>
+  <mat-icon (click)="closeDialog()" class="close-dialog-icon">clear</mat-icon>
+</div>
+<p>Are you sure that you want to delete this move?</p>
+<button
+  (click)="deleteMovie()"
+  class="base-button"
+  id="yes-button">
+  <span>Yes</span>
+</button>
+<button
+  (click)="closeDialog()"
+  class="base-button"
+  id="no-button">
+  <span>No</span>
+</button>

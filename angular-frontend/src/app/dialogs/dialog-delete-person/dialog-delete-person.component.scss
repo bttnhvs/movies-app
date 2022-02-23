@@ -1,0 +1,67 @@
+.base-button {
+  display: block;
+  float: right;
+  width: 150px;
+  height: 40px;
+  color: white;
+  outline: none;
+  background: var(--red);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.cancel-save-buttons {
+  float: right;
+}
+
+.close-dialog-icon {
+  color: var(--white);
+  float: right;
+  margin: 25px;
+}
+
+.close-dialog-icon:hover {
+  background-color: #5a748b21;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.dialog-header {
+  background: var(--red);
+  width: auto;
+  margin: -25px -25px 20px -25px;
+}
+
+.dialog-title {
+  margin: 20px 20px 20px 40px;
+  display: inline-block;
+  font-weight: 200;
+  font-size: 24px;
+  color: var(--white);
+  display: inline-block !important;
+  cursor: default;
+}
+
+::ng-deep.mat-dialog-container {
+  overflow: hidden;
+}
+
+.base-button {
+  display: block;
+  float: right;
+  width: 80px;
+  height: 40px;
+  color: white;
+  outline: none;
+  background: var(--red);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.cancel-save-buttons {
+  float: right;
+}
+
+#yes-button{
+  margin-left: 10px;
+}

@@ -1,0 +1,28 @@
+<div [ngStyle]="{'background-image': getUrl()}" class="welcome-section">
+  <div class="overlay-2">
+    <h1 class="solent-title">Solent Movies</h1>
+    <h2 class="solent-subtitle">Here to help you figure out what to watch</h2>
+    <button class="home-button"
+            routerLink="/movies">Get Started
+    </button>
+  </div>
+</div>
+<div class="container-fluid" style="overflow: hidden;">
+  <div class="row" style="margin:80px 0 20px 0">
+    <div class="col-12">
+      <h3 class="section-title">Popular Movies</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let movie of movies; let i = index" class="col-3" style="margin-bottom: 50px">
+      <div (click)="openSelectedMovie(movie.id)" class="image-box">
+        <img class="img-fluid" id="person-img" src="../../assets/{{movie.albumImg}}"/>
+        <div class="person-pane">
+          <span class="person-name">{{movie.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

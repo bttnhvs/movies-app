@@ -1,0 +1,143 @@
+<div [ngStyle]="{'background-image': getUrl()}" class="welcome-section">
+  <div class="movie-info">
+    <div class="movie-title">{{movie?.name}}</div>
+    <div>{{movie?.runtime}} | {{movie?.releaseDate}}  </div>
+  </div>
+</div>
+<div class="container-fluid" style="overflow: hidden;  background:white; padding-right: 100px; padding-left: 100px;">
+  <div *ngIf="showImgSlider" class="row">
+    <div class="col-12">
+      <div class="section-headers">
+        <div class="section-title">Gallery</div>
+        <hr>
+      </div>
+      <hr>
+      <div>
+        <ng-image-slider #nav
+                         [imageSize]="{width: '33%', height: 200}"
+                         [images]="imgCollection">
+        </ng-image-slider>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="section-headers">
+        <div class="section-title">Details</div>
+      </div>
+      <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+        <tr>
+          <td><b>Title:</b> {{movie?.name}}</td>
+        </tr>
+        <tr>
+          <td><b>Genre:</b> {{genreNames}}</td>
+        </tr>
+        <tr>
+          <td><b>Run time:</b> {{movie?.runtime}}</td>
+        </tr>
+        <tr>
+          <td><b>Director:</b> {{movie?.director}}</td>
+        </tr>
+        <tr>
+          <td><b>Writer:</b> {{movie?.writer}}</td>
+        </tr>
+        <tr>
+          <td><b>Language:</b> English</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-8">
+      <div class="section-headers">
+        <div class="section-title">Trailer</div>
+      </div>
+      <span *ngIf="movie">
+      <iframe [src]="movie.trailer | safe" allowfullscreen frameborder="0" height="315" width="560"></iframe>
+        <!--        <iframe width="560" height="315" src="https://www.youtube.com/embed/qtRKdVHc-cE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="section-headers">
+        <div class="section-title">Story</div>
+      </div>
+      <div>{{movie?.story}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="section-headers">
+        <div class="section-title">Cast</div>
+      </div>
+      <div>
+        <table class="table ">
+          <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let person of movie?.persons">
+            <td>
+              <div (click)="openPersonPage(person.id, person)" class="image-box">
+                <img class="img-fluid" id="person-img" src="../../assets/{{person.personImg}}"/>
+              </div>
+            </td>
+            <td (click)="openPersonPage(person.id, person)" class="actor-name" scope="row">{{person.name}}</td>
+            <td>Mark</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="!showImgSlider">
+        <button
+          (click)="openEditMovieDialog()"
+          class="base-button"
+          id="edit-movie-button">
+          <span>Edit Movie</span>
+        </button>
+        <button
+          (click)="openDeleteMovieDialog()"
+          class="base-button"
+          id="open-delete-movie-button">
+          <span>Delete Movie</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="section-headers">
+        <div class="section-title">Reviews</div>
+      </div>
+      <div>
+        <table>
+          <tr>
+            <th>User</th>
+            <th>Rate</th>
+            <th>Review</th>
+          </tr>
+          <tr>
+            <td>fiona.doe</td>
+            <td>8.0</td>
+            <td>This is a good movie.</td>
+          </tr>
+        </table>
+      </div>
+      <button
+        (click)="openAddReviewDialog()"
+        class="base-button"
+        id="open-add-review-button">
+        <span>Add Review</span>
+      </button>
+    </div>
+  </div>
+</div>
+

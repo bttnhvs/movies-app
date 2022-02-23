@@ -1,0 +1,86 @@
+<div
+  style="height: 100%;margin: 0;min-height: 100%;min-width: 100%;width: 100%;flex-direction: row;box-sizing: border-box;display: flex;max-height: 100%;place-content: center;align-items: center;">
+  <!--LOADING SPINNER-->
+  <!--  <div *ngIf="isLoading" style="text-align: center;">-->
+  <!--    <app-loading-spinner></app-loading-spinner>-->
+  <!--    <p class="loading-text">Loading...</p>-->
+  <!--  </div>-->
+
+  <!--LOGIN-LOGOUT MESSAGES-->
+  <!--  <div class="logout-success" *ngIf="logoutSuccessMessage">-->
+  <!--    <mat-icon class="success-icon">check_circle</mat-icon>-->
+  <!--    {{logoutSuccessMessage}}-->
+  <!--    <mat-icon class="close-dialog-icon" id="close-success-icon" (click)="closeMessage(true)">clear</mat-icon>-->
+  <!--  </div>-->
+  <!--  <div [@openCloseAlert]="state" class="login-error" *ngIf="loginErrorMessage">-->
+  <!--    <mat-icon id="error-icon" aria-hidden="false">error</mat-icon>-->
+  <!--    {{loginErrorMessage}}-->
+  <!--    <mat-icon class="close-dialog-icon" id="close-error-icon" (click)="closeMessage(false)">clear</mat-icon>-->
+  <!--  </div>-->
+
+  <div *ngIf="!isLoading" class="login-container">
+    <div class="login-header">
+      <!--      <div class="login-logo"></div>-->
+      <span class="login-title">Solent Movies</span>
+    </div>
+    <!--LOGIN-LOGOUT MESSAGES-->
+        <div class="logout-success" *ngIf="logoutSuccessMessage">
+          <mat-icon class="success-icon">check_circle</mat-icon>
+          {{logoutSuccessMessage}}
+          <mat-icon class="close-dialog-icon" id="close-success-icon" (click)="closeMessage()">clear</mat-icon>
+        </div>
+    <!--    <div class="login-error" *ngIf="loginErrorMessage">-->
+    <!--      <mat-icon id="error-icon" aria-hidden="false">error</mat-icon>-->
+    <!--      {{loginErrorMessage}}-->
+    <!--      <mat-icon class="close-dialog-icon"  id="close-error-icon" (click)="closeMessage()">clear</mat-icon>-->
+    <!--    </div>-->
+
+    <!--LOGIN FORM INPUT FIELDS-->
+    <form (ngSubmit)="login2()" [formGroup]="loginForm">
+      <div class="form-group">
+        <div
+          style="place-content: center;align-items: center;flex-direction: row;box-sizing: border-box;display: flex;">
+          <mat-icon class="login-icons">person</mat-icon>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="usernameFormControl"
+            id="username"
+            minlength="4"
+            name="username"
+            placeholder="User name"
+            type="text">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div
+          style="place-content: center;align-items: center;flex-direction: row;box-sizing: border-box;display: flex;">
+          <mat-icon class="login-icons" id="lock-icon">lock</mat-icon>
+          <label for="password"></label>
+          <input
+            [type]="hidePassword ? 'password' : 'text'"
+            autocomplete="off"
+            class="form-control"
+            formControlName="passwordFormControl"
+            id="password"
+            name="password"
+            placeholder="Password"
+            type="password">
+          <!--          <mat-icon class="visibility-icon"-->
+          <!--                    (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+        </div>
+      </div>
+      <div>
+        <button
+          class="base-button"
+          id="login-button"
+          type="submit">
+          <span>Log in</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

@@ -1,0 +1,108 @@
+<div class="dialog-header">
+  <h2 class="dialog-title">Edit Movie</h2>
+  <mat-icon class="close-dialog-icon" (click)="closeDialog()">clear</mat-icon>
+</div>
+
+    <form [formGroup]="editMovieForm" (ngSubmit)="editMovie()">
+  <div class="form-group">
+    <label for="nameFC" id="nameFC" class="field-label" required>Movie title</label>
+    <input
+      type="text"
+      class="form-control"
+      name="nameFC"
+      formControlName="nameFC"
+      autocomplete="off"
+      required/>
+  </div>
+
+  <div class="form-group">
+    <label for="runtimeFC" id="runtimeFC" class="field-label" required>Run time</label>
+    <input
+      type="text"
+      class="form-control"
+      name="runtimeFC"
+      formControlName="runtimeFC"
+      autocomplete="off"
+      required/>
+  </div>
+
+  <div class="form-group">
+    <label for="releaseDateFC" id="releaseDateFC" class="field-label" required>Release date</label>
+    <input
+      type="text"
+      class="form-control"
+      name="releaseDateFC"
+      formControlName="releaseDateFC"
+      autocomplete="off"
+      required/>
+  </div>
+
+
+  <div class="form-group">
+    <label for="directorFC" id="directorFC" class="field-label" required>Director</label>
+    <input
+      type="text"
+      class="form-control"
+      name="directorFC"
+      formControlName="directorFC"
+      autocomplete="off"
+      required/>
+  </div>
+
+  <div class="form-group">
+    <label for="writerFC" id="writerFC" class="field-label" required>Writer</label>
+    <input
+      type="text"
+      class="form-control"
+      name="writerFC"
+      formControlName="writerFC"
+      autocomplete="off"
+      required/>
+  </div>
+
+      <div class="input-group">
+        <div>
+        <label for="other-details-client-edit" class="field-label">Story</label>
+        </div>
+        <div>
+        <textarea class="form-control"
+                  id="other-details-client-edit"
+                  formControlName="storyFC">
+        </textarea>
+        </div>
+
+      </div>
+
+
+  <!--  <div class="form-group">-->
+  <!--    <label for="cnFormControl" id="cn-label" class="field-label" required>Unique Identifier</label>-->
+  <!--    <input-->
+  <!--      type="text"-->
+  <!--      id="cnFormControl"-->
+  <!--      class="form-control"-->
+  <!--      name="cnFormControl"-->
+  <!--      formControlName="cnFormControl"-->
+  <!--      autocomplete="off"-->
+  <!--      required-->
+  <!--      [ngClass]="{ 'is-invalid': submitted && f.cnFormControl.errors }"/>-->
+  <!--    <div *ngIf="submitted && f.cnFormControl.errors" class="invalid-feedback">-->
+  <!--      <div *ngIf="f.cnFormControl.errors.required">Unique Identifier is required</div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+
+  <mat-dialog-actions class="cancel-save-buttons">
+    <button mat-stroked-button
+            class="base-button"
+            (click)="closeDialog()"
+            id="cancel-button">
+      Cancel
+    </button>
+    <button mat-stroked-button
+            type="submit"
+            class="base-button"
+            id="save-button">
+      Save
+    </button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,117 @@
+.welcome-section {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.overlay-2 {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 0px);
+  background: rgb(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.welcome-section {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.solent-title {
+  color: white;
+  margin: 0px auto;
+  font-size: 50px;
+}
+
+.solent-subtitle {
+  color: white;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.home-button {
+  background: #224893;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 50px;
+  margin-top: 20px;
+  border: none;
+}
+
+#person-img {
+  height: 400px;
+  width: 300px;
+  border: 5px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+#person-img:hover {
+  cursor: pointer;
+}
+
+.person-pane {
+  position: relative;
+  background: white;
+  height: 50px;
+  border: 1px solid lightgray;
+  border-radius: 0 0 5px 5px;
+  max-width: 300px;
+}
+
+.person-pane:hover {
+  cursor: pointer;
+}
+
+.person-name {
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-box {
+  font-family: sans-serif;
+  width: 100%;
+  overflow: hidden;
+  max-width: 300px;
+  position: relative;
+  border-radius: 8px 8px 0 0;
+}
+
+
+
+

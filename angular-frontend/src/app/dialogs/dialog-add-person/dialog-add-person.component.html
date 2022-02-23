@@ -1,0 +1,87 @@
+<div class="dialog-header">
+  <h2 class="dialog-title">Add Movie</h2>
+  <mat-icon (click)="closeDialog()" class="close-dialog-icon">clear</mat-icon>
+</div>
+<div class="container-fluid" style="overflow: hidden;">
+  <form (ngSubmit)="addMovie()" [formGroup]="addPersonForm">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label class="field-label" for="nameFC" id="nameFC" required>Name</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="nameFC"
+            name="nameFC"
+            required
+            type="text"/>
+        </div>
+        <div class="form-group">
+          <label class="field-label" for="nationalityFC" id="nationalityFC" required>Nationality</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="nationalityFC"
+            name="nationalityFC"
+            required
+            type="text"/>
+        </div>
+        <div class="form-group">
+          <label class="field-label" for="birthDateFC" id="birthDateFC" required>Birth date</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="birthDateFC"
+            name="birthDateFC"
+            required
+            type="text"/>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label class="field-label" for="personImgFC" id="personImgFC" required>Profile Image</label>
+          <input
+            autocomplete="off"
+            class="form-control"
+            formControlName="personImgFC"
+            name="personImgFC"
+            required
+            type="text"/>
+        </div>
+        <div>
+          <mat-form-field appearance="fill" class="newevent__container">
+            <mat-label>Movies</mat-label>
+            <mat-select multiple name="movies">
+              <mat-option *ngFor="let movie of movies" [value]="movie">
+                {{movie.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input-group" style="display: block">
+          <div>
+            <label class="field-label" for="other-details-client-edit">Biography</label>
+          </div>
+          <div>
+           <textarea class="form-control"
+                     formControlName="biographyFC"
+                     id="other-details-client-edit">
+           </textarea>
+          </div>
+        </div>
+        <mat-dialog-actions class="cancel-save-buttons">
+          <button (click)="closeDialog()"
+                  class="base-button"
+                  mat-stroked-button>
+            Cancel
+          </button>
+          <button class="base-button"
+                  id="save-button"
+                  type="submit">
+            Save
+          </button>
+        </mat-dialog-actions>
+      </div>
+    </div>
+  </form>
+</div>

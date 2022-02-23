@@ -1,0 +1,146 @@
+:host {
+  width: 100%;
+  height: 100%;
+  background: var(--hover-gray);
+  place-content: center;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.5;
+}
+
+.login-container {
+  width: 400px;
+  background: #fff;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.login-header {
+  height: 60px;
+  background: var(--red);
+  color: var(--white);
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 300;
+  place-content: center;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: 200;
+  cursor: default;
+}
+
+.login-logo {
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  margin-right: 16px;
+  cursor: default;
+}
+
+#login-button {
+  display: block;
+  margin: 40px auto;
+  width: 150px;
+  height: 40px;
+  color: white;
+  outline: none;
+  background: var(--red);
+  border-radius: 5px;
+}
+
+.form-control {
+  //border: none;
+  //border-bottom: 1px solid #666;
+  margin: 15px 0;
+  width: 250px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+input:focus {
+  border: 1px solid var(--input-blue);
+  box-shadow: 0 0 5px var(--input-blue);
+}
+
+#error-icon {
+  vertical-align: middle;
+  color: var(--white);
+  font-size: 24px;
+  margin-right: 10px;
+  height: 27px !important;
+  width: 24px !important;
+}
+
+.login-error {
+  text-align: center;
+  border-radius: 3px;
+  margin: 0 40px 20px 40px;
+  padding: 15px;
+  color: var(--white);
+  background: #e83f6f;
+  font-weight: 300;
+  font-size: 16px;
+  cursor: default;
+  position: absolute;
+  top: 80px;
+  width: 400px;
+}
+
+.logout-success {
+  text-align: center;
+  color: var(--white);
+  border-radius: 3px;
+  margin: 0 30px 20px 30px;
+  padding: 15px 10px;
+  background: #50cdb0;
+  font-weight: 300;
+  font-size: 16px;
+  cursor: default;
+  position: absolute;
+  top: 80px;
+  width: 400px;
+}
+
+.success-icon {
+  font-size: 24px;
+  vertical-align: middle;
+  height: 27px !important;
+  width: 24px !important;
+}
+
+.loading-text {
+  color: var(--selected-blue);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#close-success-icon, #close-error-icon {
+  margin: -10px -5px 0 0;
+}
+
+.login-icons {
+  margin-right: 20px;
+  color: var(--main-black);
+}
+
+#lock-icon {
+ // margin-left: 20px;
+}
+
+.visibility-icon {
+  right: 35px;
+  margin: 0;
+}
+
+
