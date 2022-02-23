@@ -1,0 +1,36 @@
+<div class="container-fluid" style="overflow: hidden;  background: white;">
+  <div class="row" style="margin-top:100px;">
+    <div class="col-3">
+      <div class="image-box">
+        <img class="img-fluid" id="person-img" src="../../assets/{{person?.personImg}}"/>
+        <div class="overlay"></div>
+        <div class="person-main-title">Personal Info</div>
+        <div class="person-title">Known for</div>
+        <div>Acting</div>
+        <div class="person-title">Nationality</div>
+        <div>{{person?.birthDate}}</div>
+        <div class="person-title">Birthdate</div>
+        <div>{{person?.birthDate}}</div>
+        <button
+          (click)="openEditPersonDialog()"
+          class="base-button"
+          id="add-movie-button">
+          <span>Edit Star</span>
+        </button>
+        <button
+          (click)="openDeletePersonDialog()"
+          class="base-button"
+          id="delete-person-button">
+          <span>Delete Star</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-9">
+      <h2>{{person?.name}}</h2>
+      <div class="person-main-title">Biography</div>
+      <div class="person-title">{{person?.biography}}</div>
+      <div class="person-main-title">Known For</div>
+      <div class="person-title">{{person?.movies}}</div>
+    </div>
+  </div>
+</div>
